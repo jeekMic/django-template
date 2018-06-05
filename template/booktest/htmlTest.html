@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--safe表示不转义 &lt表示小于号 &gt表示大于号 ' 但引号用&#39 "双引号用 &quot &用&amp表示-->
+{{t1|safe}}
+{% autoescape off %}
+int main()
+{
+	int data[3][4] = { {1,2,3,4},{ 2,2,4,4 },{ 6,6,3,4 } };
+	int total = sum(data, 3);
+	printf("total is %d", total);
+
+	system("pause");
+    return 0;
+}
+
+{% endautoescape%}
+<hr>
+字面值：<br>
+{{t2|default:'<h1>abc</h1>'}}
+<br>
+手动转义:{{t2|default:'&lt;h1&gt;abc&lt;/h&gt;>'}}
+
+</body>
+</html>

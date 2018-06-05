@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="123/">显示</a>
+<a href="{% url 'booktest:showrec' 456 741 %}">点击可以反向解析</a>
+{% for her in hero %}
+<!--forloop.counter表示的循环的第几次-->
+<!--<li>{{forloop.counter}}:{{her.hname}}</li>-->
+{% if forloop.counter|divisibleby:"2" %}
+        <li style="color:red">{{forloop.counter}}::{{her.hname}}</li>
+{% else %}
+        <li style="color:green">{{forloop.counter}}::{{her.hname}}</li>
+{% endif %}
+
+{% empty%}
+啥也没有
+{%endfor%}
+</body>
+</html>
